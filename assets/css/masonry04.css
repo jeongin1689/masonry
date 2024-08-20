@@ -1,0 +1,17 @@
+.item {
+  width: 250px;
+  background-color: #666;
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  width: 200px;
+  overflow: hidden;
+}
+.card img {
+  width: 100%;
+}

@@ -1,0 +1,33 @@
+.wrap {
+  background-color: #aaa;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: start;
+  /* 코드를 변경해가며 테스트해보세요! */
+  height: 1500px;
+  /* max-height: 1500px; */
+  padding: 0 10px;
+}
+.item {
+  width: 25%;
+  padding: 20px 10px 0;
+}
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  background-color: #bbbaba;
+  font-size: 40px;
+  font-weight: 700;
+  color: #fff;
+}
+.card.short {
+  height: 120px;
+}
+.card.long {
+  height: 300px;
+}

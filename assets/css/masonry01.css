@@ -1,0 +1,22 @@
+.intro_name {
+  display: inline-block;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.intro_contents {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 50px;
+}
+.intro_contents a {
+  display: block;
+  color: #666;
+}
+.intro_contents a:nth-child(1) {
+  margin-top: 20px;
+}
+.intro_contents a:hover {
+  color: #000;
+}
