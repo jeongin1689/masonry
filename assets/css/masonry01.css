@@ -12,7 +12,8 @@
   margin-bottom: 50px;
 }
 .intro_contents a {
-  width: 25%;
+  width: 35%;
+  margin-bottom: 10px;
   color: #666;
 }
 .intro_contents a:nth-child(1) {
