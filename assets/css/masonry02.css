@@ -31,3 +31,9 @@
 .card.long {
   height: 300px;
 }
+
+/* 스타일 제외 */
+.contents_text {
+  background-color: #fff;
+  color: #000;
+}

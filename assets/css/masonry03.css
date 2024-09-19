@@ -1,20 +1,21 @@
 .list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 210px);
+  grid-template-columns: repeat(auto-fill, 25%);
   grid-auto-rows: 1px;
 }
 .item {
-  width: 200px;
-  grid-row-end: span 300;
+  width: 97%;
+  grid-row-end: span 190;
   background-color: #bbbaba;
   padding: 10px;
-  margin: 10px;
+  margin: 2%;
 }
 .item.short {
-  grid-row-end: span 200;
+  grid-row-end: span 100;
+  
 }
 .item.long {
-  grid-row-end: span 500;
+  grid-row-end: span 350;
 }
 .card {
   display: flex;
