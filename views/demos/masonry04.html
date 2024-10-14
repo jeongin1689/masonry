@@ -97,34 +97,43 @@
           <img src="https://img.freepik.com/premium-photo/close-up-portrait-cat_1048944-12878736.jpg?ga=GA1.1.1635594481.1724060968&semt=ais_hybrid" alt="">
         </div>
       </li>
+      <li class="item">
+        <div class="card">
+          <img src="https://img.freepik.com/free-photo/grey-kitty-with-monochrome-wall-her_23-2148955114.jpg?ga=GA1.1.1635594481.1724060968&semt=ais_hybrid" alt="">
+        </div>
+      </li>
+      <li class="item">
+        <div class="card">
+          <img src="https://img.freepik.com/free-photo/adorable-kitty-looking-like-it-want-hunt_23-2149167099.jpg?ga=GA1.1.1635594481.1724060968&semt=ais_hybrid" alt="">
+        </div>
+      </li>
+      <li class="item">
+        <div class="card">
+          <img src="https://img.freepik.com/premium-photo/close-up-cat-looking-away_1048944-23130667.jpg?ga=GA1.1.1635594481.1724060968&semt=ais_hybrid" alt="">
+        </div>
+      </li>
+      <li class="item">
+        <div class="card">
+          <img src="https://img.freepik.com/free-photo/close-up-portrait-beautiful-cat_23-2149214412.jpg?ga=GA1.1.1635594481.1724060968&semt=ais_hybrid" alt="">
+        </div>
+      </li>
     </ul>
   </div>
 
   <!-- javascript -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
-    // window.onload = () => {
-    //   document.querySelectorAll(".item").forEach((item) => {
-    //     item.style.gridRowEnd = `span ${item.clientHeight + 20}`;
-    //   });
-
-    //   const list = document.querySelector(".list");
-
-    //   list.style.display = "grid";
-    //   list.style.gridTemplateColumns = "repeat(auto-fill, 25%)";
-    //   list.style.gridAutoRows = "1px";
-    // }
-
-    $(function(){
-      $(".item").each(function(index, item) {
-        $(this).css("grid-row-end", "span " + ($(this).height() + 20));
-        console.log($(this).length)
+    window.onload = () => {
+      document.querySelectorAll(".item").forEach((item) => {
+        item.style.gridRowEnd = `span ${item.clientHeight + 20}`;
       });
 
-      const list = $(".list");
+      const list = document.querySelector(".list");
 
-      $(".list").css({"display": "grid","grid-template-columns": "repeat(auto-fill, 25%)","grid-auto-rows": "1px"})
-    });
+      list.style.display = "grid";
+      list.style.gridTemplateColumns = "repeat(auto-fill, 25%)";
+      list.style.gridAutoRows = "1px";
+    }
     
   </script>
 </body>
