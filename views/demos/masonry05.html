@@ -13,15 +13,25 @@
 <body>
  
   <div class="wrap">
-    <ul class="list">
+    <ul class="list grid">
     </ul>
   </div>
 
   <!-- javascript -->
   <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
     $(document).ready(function(){
+      callCatsImages();
+
+      var msnry = new Masonry('.grid', {
+        // options
+        itemSelector: '.grid-item',
+        gutter: 10
+      });
+    });
+
+    function callCatsImages(){
       $.ajax({
         url: 'https://api.thecatapi.com/v1/images/search?limit=10',
         type: 'GET',
@@ -33,7 +43,7 @@
             let catsListHtml = "";
             $.each(cats, function(key, cat){
               let catsImage = cat.url;
-              catsListHtml += "<li class='item'><div class='card'><img src='" + catsImage + "' alt=''></div></li>"
+              catsListHtml += "<li class='item grid-item'><div class='card'><img src='" + catsImage + "' alt=''></div></li>"
             });
             $(".list").append(catsListHtml);
           }
@@ -41,8 +51,8 @@
         error: function(request, status, error){
           console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
         }
-      })
-    });
+      });
+    }
   </script>
 </body>
 </html>
