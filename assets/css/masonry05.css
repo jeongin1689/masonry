@@ -6,10 +6,15 @@
 .list {
   width: 100%;
 }
-.item {
-  overflow: hidden;
-  width: 409px;
+.grid-sizer, .grid-item { 
+  width: 45%; 
   margin-bottom: 10px;
+}
+.grid-item { 
+  overflow:hidden;
+  margin-bottom:10px; 
+  border:1px solid #111; 
+  border-radius: 20px; 
 }
 .item img {
   width: 100%;

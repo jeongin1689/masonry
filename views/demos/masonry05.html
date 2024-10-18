@@ -13,8 +13,9 @@
 <body>
  
   <div class="wrap">
-    <ul class="list grid">
-    </ul>
+    <div class="list grid">
+      <div class="grid-sizer"></div>
+    </div>
   </div>
 
   <!-- javascript -->
@@ -24,11 +25,15 @@
     $(document).ready(function(){
       callCatsImages();
 
-      var msnry = new Masonry('.grid', {
-        // options
-        itemSelector: '.grid-item',
-        gutter: 10
-      });
+      setTimeout(() =>{
+        var msnry = new Masonry('.grid', {
+          // options
+          itemSelector: '.grid-item',
+          gutter: 10,
+          columnWidth: '.grid-sizer',
+        });
+      },1000);
+
     });
 
     function callCatsImages(){
@@ -43,7 +48,7 @@
             let catsListHtml = "";
             $.each(cats, function(key, cat){
               let catsImage = cat.url;
-              catsListHtml += "<li class='item grid-item'><div class='card'><img src='" + catsImage + "' alt=''></div></li>"
+              catsListHtml += "<div class='item grid-item'><div class='card'><img src='" + catsImage + "' alt=''></div></div>"
             });
             $(".list").append(catsListHtml);
           }
