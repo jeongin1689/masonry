@@ -24,16 +24,15 @@
   <script>
     $(document).ready(function(){
       callCatsImages();
+    });
 
-      setTimeout(() =>{
-        var msnry = new Masonry('.grid', {
-          // options
-          itemSelector: '.grid-item',
-          gutter: 10,
-          columnWidth: '.grid-sizer',
-        });
-      },1000);
+    $(window).on('scroll', function(){
+      stateBottom();
+      stateTop();
 
+      if(stateBottom() === true){
+        callCatsImages();
+      }
     });
 
     function callCatsImages(){
@@ -51,12 +50,41 @@
               catsListHtml += "<div class='item grid-item'><div class='card'><img src='" + catsImage + "' alt=''></div></div>"
             });
             $(".list").append(catsListHtml);
+            setTimeout(() =>{
+              var msnry = new Masonry('.grid', {
+                // options
+                itemSelector: '.grid-item',
+                gutter: 10,
+                columnWidth: '.grid-sizer',
+              });
+            },500);
           }
         },
         error: function(request, status, error){
           console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
         }
       });
+    }
+
+    function stateBottom(){
+      let scrollTop = $(window).scrollTop();
+      let innerHeight = $(window).innerHeight();
+      let scrollHeight = $('body').prop('scrollHeight');
+
+      if(scrollTop + innerHeight >= scrollHeight){
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+    function stateTop() {
+      var scrollTop = $(window).scrollTop();
+      if (scrollTop == 0) {
+        return true;
+      } else {
+        return false;
+      }
     }
   </script>
 </body>
